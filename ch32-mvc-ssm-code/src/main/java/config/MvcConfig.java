@@ -50,6 +50,17 @@ public class MvcConfig implements WebMvcConfigurer {
         registration.addResourceLocations("classpath:/static/");
     }
 
+    /**
+     * Configure the {@link HttpMessageConverter HttpMessageConverters} to use for reading or writing
+     * to the body of the request or response. If no converters are added, a
+     * default list of converters is registered.
+     * <p><strong>Note</strong> that adding converters to the list, turns off
+     * default converter registration. To simply add a converter without impacting
+     * default registration, consider using the method
+     * {@link #extendMessageConverters(List)} instead.
+     *
+     * @param converters initially an empty list of converters
+     */
     @Override
     public void configureMessageConverters(List<HttpMessageConverter<?>> converters) {
 
